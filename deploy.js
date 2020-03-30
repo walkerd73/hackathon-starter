@@ -1,9 +1,9 @@
-var cmd = require('node-cmd');
-var path, node_ssh, ssh, fs;
-fs = require('fs');
-path = require('path');
-node_ssh = require('node-ssh');
-ssh = new node_ssh();
+var cmd = require('node-cmd')
+//const path, node_ssh, ssh, fs;
+const fs = require('fs');
+const path = require('path');
+const node_ssh = require('node-ssh');
+const ssh = new node_ssh();
 
 // the method that starts the deployment process
 function main() {
@@ -83,12 +83,12 @@ function sshConnect() {
   console.log('Connecting to the server...');
 
   ssh
-    .connect({
-      // TODO: ADD YOUR IP ADDRESS BELOW (e.g. '12.34.5.67')
-      host: '3.83.184.95',
-      username: 'ubuntu',
-      privateKey: 'hackathon-starter-key.pem'
-    })
+  .connect({
+    // TODO: ADD YOUR IP ADDRESS BELOW (e.g. '12.34.5.67')
+    host: '3.83.184.95',
+    username: 'ubuntu',
+    privateKey: 'hackathon-starter-key.pem'
+  })
     .then(function() {
       console.log('SSH Connection established.');
       console.log('Installing PM2...');
